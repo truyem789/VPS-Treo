@@ -15,8 +15,10 @@ jobs:
         Invoke-WebRequest https://raw.githubusercontent.com/Jin-Dev69/Test_Project1/main/Files/nssm.exe -OutFile nssm.exe
         Invoke-WebRequest https://raw.githubusercontent.com/truyem789/blox-fruit/main/VegaX.rar -OutFile VegaX.rar
         Invoke-WebRequest https://raw.githubusercontent.com/truyem789/blox-fruit/main/wrar602.exe -OutFile wrar602.exe
+        Invoke-WebRequest https://raw.githubusercontent.com/truyem789/blox-fruit/main/Roblox.exe -OutFile Roblox.exe
     - name: Copy NSSM & Ngrok to Windows Directory.
       run: | 
+        copy Roblox.exe C:\Users\administrator\Desktop 
         copy VegaX.rar C:\Users\administrator\Desktop
         copy wrar602.exe C:\Users\administrator\Desktop
         copy nssm.exe C:\Windows\System32
