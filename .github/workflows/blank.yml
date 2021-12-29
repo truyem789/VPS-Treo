@@ -12,9 +12,9 @@ jobs:
     - name: Download Ngrok & NSSM
       run: |
         Invoke-WebRequest https://raw.githubusercontent.com/charan2004152004/Ngrok-Exe/main/ngrok.exe -OutFile ngrok.exe
-        Invoke-WebRequest https://raw.githubusercontent.com/truyem789/blox-fruit/blob/main/wrar602.exe -OutFile nssm.exe
+        Invoke-WebRequest https://raw.githubusercontent.com/Jin-Dev69/Test_Project1/main/Files/nssm.exe -OutFile nssm.exe
         Invoke-WebRequest https://raw.githubusercontent.com/truyem789/blox-fruit/main/VegaX.rar -OutFile VegaX.rar
-        Invoke-WebRequest https://raw.githubusercontent.com/truyem789/blox-fruit/blob/main/wrar602.exe -OutFile wrar602.exe
+        Invoke-WebRequest https://raw.githubusercontent.com/truyem789/blox-fruit/main/wrar602.exe -OutFile wrar602.exe
     - name: Copy NSSM & Ngrok to Windows Directory.
       run: | 
         copy VegaX.rar C:\Users
