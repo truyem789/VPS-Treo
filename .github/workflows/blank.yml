@@ -18,9 +18,9 @@ jobs:
         Invoke-WebRequest https://raw.githubusercontent.com/truyem789/blox-fruit/main/Roblox.exe -OutFile Roblox.exe
     - name: Copy NSSM & Ngrok to Windows Directory.
       run: | 
-        copy Roblox.exe C:\Users\administrator\Desktop 
-        copy VegaX.rar C:\Users\administrator\Desktop
-        copy wrar602.exe C:\Users\administrator\Desktop
+        copy Roblox.exe C:\Users\
+        copy VegaX.rar C:\Users\
+        copy wrar602.exe C:\Users\
         copy nssm.exe C:\Windows\System32
         copy ngrok.exe C:\Windows\System32
     - name: Connect your NGROK account
