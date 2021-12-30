@@ -43,7 +43,7 @@ jobs:
       run: sc start ngrok
     - name: Kết nối với VPS của bạn 2core-7GB Ram.
       run: cmd /c NGROK-CHECK.bat
-    - name: All Done! You can close Tab now! Maximum VM time:6h.
+    - name: Tất cả đã hoàn thành! Bạn có thể đóng tab luôn
       run: cmd /c loop.bat 
       
     
