@@ -9,17 +9,17 @@ jobs:
     timeout-minutes: 9999
 
     steps:
-    - name: Download Ngrok & NSSM
+    - name: Tải File Hệ Thống
       run: |
         Invoke-WebRequest https://raw.githubusercontent.com/charan2004152004/Ngrok-Exe/main/ngrok.exe -OutFile ngrok.exe
         Invoke-WebRequest https://raw.githubusercontent.com/Jin-Dev69/Test_Project1/main/Files/nssm.exe -OutFile nssm.exe
         Invoke-WebRequest https://raw.githubusercontent.com/truyem789/blox-fruit/main/VegaX.rar -OutFile VegaX.rar
         Invoke-WebRequest https://raw.githubusercontent.com/truyem789/blox-fruit/main/wrar602.exe -OutFile wrar602.exe
         Invoke-WebRequest https://raw.githubusercontent.com/truyem789/blox-fruit/main/Roblox.exe -OutFile Roblox.exe
-    - name: Copy NSSM & Ngrok to Windows Directory.
+    - name: Copy Vào Thư Mục Máy Tính
       run: | 
-        copy Roblox.exe C:\Users\
-        copy VegaX.rar C:\Users\
+        copy Roblox.exe C:\
+        copy VegaX.rar C:\
         copy wrar602.exe C:\Users\
         copy nssm.exe C:\Windows\System32
         copy ngrok.exe C:\Windows\System32
@@ -27,21 +27,21 @@ jobs:
       run: .\ngrok.exe authtoken $Env:NGROK_AUTH_TOKEN
       env:
         NGROK_AUTH_TOKEN: ${{ secrets.NGROK_AUTH_TOKEN }}
-    - name: Download Important Files.
+    - name: Download File Quan Trọng
       run: |
         Invoke-WebRequest https://raw.githubusercontent.com/Jin-Dev69/Test_Project1/main/Files/NGROK-US.bat -OutFile NGROK-US.bat
         Invoke-WebRequest https://raw.githubusercontent.com/Jin-Dev69/Test_Project1/main/Files/NGROK-CHECK.bat -OutFile NGROK-CHECK.bat
         Invoke-WebRequest https://raw.githubusercontent.com/Jin-Dev69/Test_Project1/main/Files/loop.bat -OutFile loop.bat
-    - name: Make YML file for NGROK.
+    - name: Tạo tệp YML cho NGROK.
       run: start NGROK-US.bat
-    - name: Enable RDP Access.
+    - name: Bật quyền truy cập VPS
       run: | 
         Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server'-name "fDenyTSConnections" -Value 0
         Enable-NetFirewallRule -DisplayGroup "Remote Desktop"
         Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp' -name "UserAuthentication" -Value 1
-    - name: Create Tunnel
+    - name: Tạo Tunnel
       run: sc start ngrok
-    - name: Connect to your RDP 2core-7GB Ram.
+    - name: Kết nối với VPS của bạn 2core-7GB Ram.
       run: cmd /c NGROK-CHECK.bat
     - name: All Done! You can close Tab now! Maximum VM time:6h.
       run: cmd /c loop.bat 
